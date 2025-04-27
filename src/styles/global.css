@@ -2,7 +2,7 @@
 
 
 :root {    
-    --accent: rgb(48, 48, 99);
+    --accent: rgb(8, 73, 126);
     --black: #212121;
 	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
@@ -27,6 +27,8 @@
 
 body {
     font-family: "Sarabun", Arial, Helvetica, sans-serif;
+    background-color: hsl(200, 32%, 83%);
+    background-image: radial-gradient(hsl(203, 14%, 82%), hsl(209, 29%, 58%));
 }
 
 .container {
