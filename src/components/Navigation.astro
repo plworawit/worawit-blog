@@ -1,0 +1,262 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<nav class="menu menu-active">
+    <a href="/" class="link-hover">Home</a>
+
+    <!--- blog Dropdown -->
+    <div class="blog-dropdown">
+        <div class="dropdown-title">
+            <p class="link-hover">Blog</p>
+            <i><Icon name="chevron-up" /></i>
+        </div>
+        
+        <div class="dropdown-content">
+            <a href="/blog/" class="dropdown-item">
+                <i style="font-size: 20px;"><Icon name="folder-open" /></i>
+                <p>All</p>
+            </a>
+            <hr />
+            <a href="/" class="dropdown-item">
+                <i style="font-size: 20px;"><Icon name="math-max-min" /></i>
+                <p>Mathematics</p>
+            </a>
+            <hr />
+            <a href="/" class="dropdown-item">
+                <i style="font-size: 20px;"><Icon name="atom" /></i>
+                <p>Physics</p>
+            </a>
+            <hr />
+            <a href="/" class="dropdown-item">
+                <i style="font-size: 20px;"><Icon name="command" /></i>
+                <p>Computer</p>
+            </a>
+        </div>
+    </div>  
+    <a href="/download" class="link-hover">download</a>
+    <a href="/tags/" class="link-hover">Tags</a>
+    <hr class="divider" />  
+    <Icon name="close-btn" class="close-btn" />
+    <div class="crupmble">
+        <a href="/"><i class="search-icon"><Icon name="search" /></i></a>        
+    </div>  
+</nav>
+
+<style is:global>
+    /********************** Navigation ************************/
+.menu {
+    display: flex;
+    gap: 44px;
+    align-items: center;
+}
+
+.link-hover {
+    display: inline-block;
+    position: relative;
+    color: var(--black);
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+}
+
+.link-hover:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.link-hover:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+.blog-dropdown {
+    position: relative;
+}
+
+.dropdown-title {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+
+.dropdown-title i {
+    font-size: 25px;
+    transform: rotate(180deg);
+    color: var(--black);
+    transition: all 0.2s ease-out;
+}
+
+.dropdown-title:hover i {
+    color: var(--accent);
+}
+
+.dropdown-title.rotate-0 i {
+    transform: rotate(0deg);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 40px;
+    width: 290px;
+    background-color: var(--accent);
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.3s ease-out;
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+.dropdown-content a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 15px 20px;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    transition: all 0.3s ease-in-out;
+}
+
+.dropdown-content a:hover {
+    gap: 10px;
+}
+.crumbles {
+    display: flex;
+    gap: 32px;
+}
+
+.crumbles  i {
+    font-size: 24px;
+    color: var(--accent);
+    text-decoration: none;
+    transition: all 0.3s ease-out;
+}
+
+.crumbles i:hover {
+    opacity: 0.7;
+}
+
+.divider {
+    display: none;
+}
+
+.close-btn {
+    color: white;
+    position: absolute;
+    display: none;
+}
+
+.open-btn {
+    color: var(--black);
+    font-size: 32px;
+    margin: 0 20px;
+    display: none;
+}
+.search-icon {
+    color: #13135f;
+}
+
+
+/* Laptop and Tablet */
+@media (max-width: 1024px) and (min-width: 0px) {
+    .menu {
+        gap: 22px;
+    }
+    .link-hover {
+        font-size: 12px;
+    }
+}
+
+/* Phone */
+@media (max-width: 767px) and (min-width: 0px) {
+    .open-btn {
+        display: block;
+    }
+    .close-btn {
+        display: block;
+        top: 0;
+        right: 0;
+        margin: 48px;
+        font-size: 24px;
+    }
+    .menu {
+        flex-direction: column;
+        position: fixed;
+        background-color: var(--black);
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        justify-content: center;
+        padding: 50px;
+        gap: 44px;
+        transition: left 0.5s;
+        overflow-y: scroll;
+    }
+
+    .menu-active {
+        left: -100%;
+    }
+
+    .link-hover {
+        color: white;
+        font-size: 28px;
+        font-weight: 600;
+        letter-spacing: 0;
+    }
+
+    .dropdown-title {
+        gap: 10px;
+    }
+
+    .dropdown-title i {
+        color: white;
+    }
+
+    .divider {
+        display: block;
+        align-self: normal;
+        color: white;
+    }
+
+    .services-dropdown {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .dropdown-content {
+        position: relative;
+        background-color: var(--black);
+        min-width: 70vw;
+        top: 0;
+    }
+
+    .search-icon {
+        color: white;
+        font-size: 20px;
+    }
+}
+
+
+
+</style>
+
+
+
+ 
