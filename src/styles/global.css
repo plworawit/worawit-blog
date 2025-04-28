@@ -27,8 +27,9 @@
 
 body {
     font-family: "Sarabun", Arial, Helvetica, sans-serif;
-    background-color: hsl(200, 32%, 83%);
-    background-image: radial-gradient(hsl(203, 14%, 82%), hsl(209, 29%, 58%));
+    background-color: hsl(195, 22%, 96%);
+    background-image: radial-gradient(hsl(204, 38%, 95%), hsl(210, 29%, 88%));
+	min-height: 100vh;
 }
 
 .container {
