@@ -9,7 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.7.5",
+    "@astrojs/mdx": "^4.2.5",
+    "astro": "^5.7.6",
     "astro-icon": "^1.1.5"
   }
 }
